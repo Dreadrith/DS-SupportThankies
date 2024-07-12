@@ -213,9 +213,7 @@ namespace DreadScripts.Common.SupportThankies
 		}
 
 		public void OnEnable() => RandomizeThanksLabel();
-
-		public void OnLostFocus() { Close(); }
-
+		
 		public static void ResetLoad()
 		{
 			isLoadingSupporters = hasLoadedSupporters = failedLoadingSupporters = false;
