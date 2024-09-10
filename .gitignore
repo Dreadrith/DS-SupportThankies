@@ -1,2 +1,5 @@
-
-*.meta
+**.meta
+.solution/bin
+.solution/obj
+.solution/.idea
+.solution/packages

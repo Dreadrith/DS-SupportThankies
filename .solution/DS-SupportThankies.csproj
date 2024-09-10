@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{301D4983-B7AF-4DA2-B07B-85637466CEDC}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>DS_SupportThankies</RootNamespace>
+        <AssemblyName>DS_SupportThankies</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Bee.BeeDriver2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\Bee.BeeDriver2.dll</HintPath>
+        </Reference>
+        <Reference Include="Bee.BinLog, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\Bee.BinLog.dll</HintPath>
+        </Reference>
+        <Reference Include="Bee.TinyProfiler2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\Bee.TinyProfiler2.dll</HintPath>
+        </Reference>
+        <Reference Include="BeeBuildProgramCommon.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\BeeBuildProgramCommon.Data.dll</HintPath>
+        </Reference>
+        <Reference Include="ExCSS.Unity, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\ExCSS.Unity.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="PlayerBuildProgramLibrary.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\PlayerBuildProgramLibrary.Data.dll</HintPath>
+        </Reference>
+        <Reference Include="ScriptCompilationBuildProgram.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\ScriptCompilationBuildProgram.Data.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.CodeDom, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\System.CodeDom.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
+        <Reference Include="Unity.Cecil, Version=0.10.0.0, Culture=neutral, PublicKeyToken=fc15b93552389f74, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\Unity.Cecil.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Cecil.Mdb, Version=0.10.0.0, Culture=neutral, PublicKeyToken=fc15b93552389f74, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\Unity.Cecil.Mdb.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Cecil.Pdb, Version=0.10.0.0, Culture=neutral, PublicKeyToken=fc15b93552389f74, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\Unity.Cecil.Pdb.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Cecil.Rocks, Version=0.10.0.0, Culture=neutral, PublicKeyToken=fc15b93552389f74, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\Unity.Cecil.Rocks.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.CecilTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\Unity.CecilTools.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.CompilationPipeline.Common, Version=2022.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\Unity.CompilationPipeline.Common.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.SerializationLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\Unity.SerializationLogic.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.DeviceSimulatorModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.DeviceSimulatorModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.DiagnosticsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.DiagnosticsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.EditorToolbarModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.EditorToolbarModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.Graphs, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEditor.Graphs.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.GraphViewModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.PresetsUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.PresetsUIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.QuickSearchModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.QuickSearchModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.SceneTemplateModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.SceneViewModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.SceneViewModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.TextCoreFontEngineModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.TextCoreFontEngineModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.TextCoreTextEngineModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.TextCoreTextEngineModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.UIBuilderModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.UIBuilderModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.UIElementsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.UIElementsSamplesModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEditor.UnityConnectModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AccessibilityModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.AIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AndroidJNIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ARModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.ARModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClothModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClusterInputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClusterRendererModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ContentLoadModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.ContentLoadModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CrashReportingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.DirectorModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.DSPGraphModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.GameCenterModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.GIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.GIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.GridModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.GridModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.HotReloadModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.InputModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.JSONSerializeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.LocalizationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.NVIDIAModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.NVIDIAModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.PerformanceReportingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ProfilerModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.PropertiesModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.PropertiesModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ScreenCaptureModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SharedInternalsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SpriteMaskModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SpriteShapeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.StreamingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SubstanceModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SubsystemsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.SubsystemsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TerrainModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TerrainPhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextCoreFontEngineModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextCoreTextEngineModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TilemapModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TLSModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIElementsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UmbraModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityAnalyticsCommonModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityAnalyticsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityConnectModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityCurlModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityTestProtocolModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestAudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestTextureModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VehiclesModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VFXModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VideoModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VirtualTexturingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.VirtualTexturingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VRModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.VRModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.WindModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.WindModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.XRModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\UnityEditor.2022.3.22\lib\2022.3.22\UnityEngine\UnityEngine.XRModule.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="..\Classes\AsyncUnityWebRequest.cs">
+          <Link>Classes\AsyncUnityWebRequest.cs</Link>
+        </Compile>
+        <Compile Include="..\Classes\ReflectionSplitterGUILayout.cs">
+          <Link>Classes\ReflectionSplitterGUILayout.cs</Link>
+        </Compile>
+        <Compile Include="..\Classes\Scopes.cs">
+          <Link>Classes\Scopes.cs</Link>
+        </Compile>
+        <Compile Include="..\Classes\Supporter.cs">
+          <Link>Classes\Supporter.cs</Link>
+        </Compile>
+        <Compile Include="..\Classes\WebLoadedTexture.cs">
+          <Link>Classes\WebLoadedTexture.cs</Link>
+        </Compile>
+        <Compile Include="..\Helper.cs">
+          <Link>Helper.cs</Link>
+        </Compile>
+        <Compile Include="..\Main.cs">
+          <Link>Main.cs</Link>
+        </Compile>
+        <Compile Include="..\Strings.cs">
+          <Link>Strings.cs</Link>
+        </Compile>
+        <Compile Include="..\StylesAndContent.cs">
+          <Link>StylesAndContent.cs</Link>
+        </Compile>
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
