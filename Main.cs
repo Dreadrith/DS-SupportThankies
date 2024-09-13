@@ -38,6 +38,12 @@ namespace DreadScripts.Common.SupportThankies
 		{
 			var r = EditorGUILayout.GetControlRect(false, 16, GUIStyle.none, GUILayout.Width(16));
 			r.x -= 2;
+			r.y += 2;
+			r = r.Shrink(1);
+			DrawThanksButton(r);
+		}
+		public static void DrawThanksButton(Rect r)
+		{
 			Content.showWindowIcon.DrawTexture(r);
 			if (IfRectClicked(r)) ShowWindow();
 		}
